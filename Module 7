@@ -1,0 +1,25 @@
+# Load data, using mtcars
+mydata <- mtcars
+
+#basic functions
+head(mydata)
+tail(mydata)
+list(mydata)
+
+#check to see if data frame is S4
+isS4(mydata)
+
+#check type
+typeof(mydata)
+
+#s3 data 
+s3Data <- list(name = "Darius", gender = "Male", pay_rate = 25000, job_title = "Pilot")
+s3Data
+s3.data <- list(name = "Bobbi", gender = "Female", pay_rate = 85000, job_title = "Therapist")
+s3.data
+
+#s4 data
+s4Data <- new("employee", name = "Darius", gender = "Male", pay_rate = 2500, job_title = "Pilot")
+s4Data
+s4.data <- new("student", name = "Kal", id = 34746, gpa = 3.9, major = "Anthropology")
+s4.data
