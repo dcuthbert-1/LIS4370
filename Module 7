@@ -19,7 +19,8 @@ s3.data <- list(name = "Bobbi", gender = "Female", pay_rate = 85000, job_title =
 s3.data
 
 #s4 data
-s4Data <- new("employee", name = "Darius", gender = "Male", pay_rate = 2500, job_title = "Pilot")
+setClass("Employee", representation(name = "character",job_title = "character", pay_rate = "numeric", id = "numeric"))
+s4Data <- new("Employee", name = "Darius", job_title = "Pilot", pay_rate = 25000, id =34744)
 s4Data
-s4.data <- new("student", name = "Kal", id = 34746, gpa = 3.9, major = "Anthropology")
+s4.data <- new("Employee", name = "Kal", job_title = "Manager", pay_rate = 45000, id =34746)
 s4.data
