@@ -1,0 +1,24 @@
+install.packages("ggplot2")
+install.packages("lattice")
+
+library(ggplot2)
+library(lattice)
+
+florida <- read.csv("florida.csv")
+
+
+names(florida)[1] <- "COUNTY"
+
+
+#Basic Plot Visual
+barplot(florida$Total)
+hist(florida$Total)
+
+
+
+#Visual with Lattice
+xyplot(COUNTY ~ Total, florida, grid = TRUE)
+
+
+#Visual using ggplot2
+ggplot(florida, aes(x=Total, y=COUNTY)) + geom_point() + ggtitle("Total Votes Per County") + xlab("Votes") + ylab("Florida Counties")
