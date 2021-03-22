@@ -1,0 +1,8 @@
+Package: Cuthbert
+Title: Removes and Counts Number of Vowels
+Version: 0.1
+Authors@R: "Darius Cuthbert <dcuthbert1@usf.edu> [aut, cre]"
+Description: The general objective of this package is to take the vowels out of each word in a txt file or doc and then count out how many total vowels were in the file. Also categorize the vowels and give a total for each category. (e.g. a - 13 total letters, e - 27 total letters)
+Depends: R (>= 3.1.2)
+License: CCO
+  LazyData: true
