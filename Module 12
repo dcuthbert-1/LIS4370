@@ -1,0 +1,76 @@
+---
+Author: Darius Cuthbert
+title: "Module 12- Markdown"
+output: html_document
+---
+## Install and Load all Packages
+```{r setup, include=FALSE}
+#install.packages("CarletonStats")
+#install.packages("devtools")
+#install.packages("epanetReader")
+#install.packages("fmsb")
+#install.packages("ggplot2")
+#install.packages("ggthemes")
+#install.packages("latticeExtra")
+#install.packages("MASS")
+#install.packages("PerformanceAnalytics")
+#install.packages("psych")
+#install.packages("plyr")
+#install.packages("prettyR")
+#install.packages("plotrix")
+#install.packages("proto")
+#install.packages("RCurl")
+#install.packages("reshape")
+#install.packages("reshape2")
+
+
+library(CarletonStats)
+library(devtools)
+library(epanetReader)
+library(fmsb)
+library(ggplot2)
+library(ggthemes)
+library(latticeExtra)
+library(MASS)
+library(PerformanceAnalytics)
+library(psych)
+library(plyr)
+library(prettyR)
+library(plotrix)
+library(proto)
+library(RCurl)
+library(reshape)
+library(reshape2)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r Tomlinson csv file}
+TomlinsonRush <- read.csv("TomlinsonRush.csv")
+```
+
+## Plot of previous weeks visual
+
+
+
+```{r}
+ggplot(TomlinsonRush, aes(x = Attempts, y = Yards)) +
+  geom_point() +
+  geom_rug() + 
+  theme_tufte(ticks = F) +
+  xlab("Attempts") +
+  ylab("Yards") +
+  ggtitle("Tomlinsons Season Stats")
+  theme(axis.title.x = element_text(vjust = -0.5), axis.title.y = element_text(vjust = 1))
+```
+
+[linked phrase](https://raw.githubusercontent.com/bearloga/Quartile-frame-Scatterplot/master/qfplot.R)
+```{r}
+source_url('https://raw.githubusercontent.com/bearloga/Quartile-frame-Scatterplot/master/qfplot.R')
+qfplot(x = TomlinsonRush$Attempts, y = TomlinsonRush$Yards, xlab="Attempts", ylab="Yards")
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
